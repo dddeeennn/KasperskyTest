@@ -14,6 +14,7 @@ namespace ReportCreate
         public string OpenPath { get; set; }
         public string SavePath { get; set; }
         public List<LogFile> LogFiles { get; set; }
+        private Dictionary<Guid, TotalReportItem> TotalReport { get; set; }
         public string[] FilePaths { get; set; }
 
         public ReportCreator(string openPath, string savePath)
@@ -21,6 +22,7 @@ namespace ReportCreate
             OpenPath = openPath;
             SavePath = savePath;
             LogFiles = new List<LogFile>();
+            TotalReport = new Dictionary<Guid, TotalReportItem>();
         }
 
         /// <summary>
@@ -69,7 +71,7 @@ namespace ReportCreate
                     Type type = typeof(T);
                     PropertyInfo[] propInfo = type.GetProperties();
                     //for each property value write line in file
-                    for (int i = 0; i < propInfo.Length;i++ )
+                    for (int i = 0; i < propInfo.Length; i++)
                     {
                         //change bool value to "1" or "0"
                         if (propInfo[i].PropertyType == typeof(bool))
@@ -95,7 +97,26 @@ namespace ReportCreate
 
         public void GetTotalReport()
         {
-
+            foreach (LogFile logFile in LogFiles)
+            {
+                foreach (KeyValuePair<Guid, TotalReportItem> item in logFile.GetTotalReportFile())
+                {
+                    if (TotalReport.ContainsKey(item.Key))
+                    {
+                        TotalReport[item.Key].UserCount++;
+                        TotalReport[item.Key].FileCount += item.Value.FileCount;
+                    }
+                    else
+                    {
+                        TotalReport.Add(item.Key, new TotalReportItem(item.Key, item.Value.UserCount, item.Value.FileCount));
+                    }
+                }
+            }
+            string pathString = SavePath + "\\TotalReport.csv";
+            List<TotalReportItem> list = new List<TotalReportItem>();
+            list = TotalReport.Values.ToList();
+            list.Sort((x,y)=>x.UserCount<y.UserCount?1:x.UserCount==y.UserCount?0:-1);
+            Serialize(list,pathString);
         }
     }
 }

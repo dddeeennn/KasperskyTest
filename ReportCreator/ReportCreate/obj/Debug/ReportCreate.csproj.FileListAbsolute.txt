@@ -11,3 +11,16 @@ C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\
 C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.exe
 C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.pdb
 C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.csprojResolveAssemblyReference.cache
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\bin\Debug\ReportCreate.exe.config
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.exe
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.pdb
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\bin\Debug\ReportCreate.exe
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\bin\Debug\ReportCreate.pdb
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.csprojResolveAssemblyReference.cache
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\MainWindow.baml
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\MainWindow.g.cs
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\App.g.cs
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate_MarkupCompile.cache
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.g.resources
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.Properties.Resources.resources
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.csproj.GenerateResource.Cache
