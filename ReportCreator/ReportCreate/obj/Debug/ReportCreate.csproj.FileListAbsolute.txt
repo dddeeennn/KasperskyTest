@@ -1,0 +1,13 @@
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\bin\Debug\ReportCreate.exe.config
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\bin\Debug\ReportCreate.exe
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\bin\Debug\ReportCreate.pdb
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\MainWindow.baml
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\MainWindow.g.cs
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\App.g.cs
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate_MarkupCompile.cache
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.g.resources
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.Properties.Resources.resources
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.csproj.GenerateResource.Cache
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.exe
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.pdb
+C:\Users\Компьютер\documents\visual studio 2012\Projects\ReportCreator\ReportCreate\obj\Debug\ReportCreate.csprojResolveAssemblyReference.cache
