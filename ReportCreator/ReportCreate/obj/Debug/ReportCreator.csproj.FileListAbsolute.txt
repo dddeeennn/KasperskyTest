@@ -1,0 +1,13 @@
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\bin\Debug\ReportCreate.exe.config
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\bin\Debug\ReportCreate.exe
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\bin\Debug\ReportCreate.pdb
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreator.csprojResolveAssemblyReference.cache
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\MainWindow.baml
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\MainWindow.g.cs
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\App.g.cs
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate_MarkupCompile.cache
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.g.resources
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.Properties.Resources.resources
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreator.csproj.GenerateResource.Cache
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.exe
+D:\GitRepositories\KasperskyTest\ReportCreator\ReportCreate\obj\Debug\ReportCreate.pdb

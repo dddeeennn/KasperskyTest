@@ -18,5 +18,12 @@ namespace ReportCreate
             UserCount = userCount;
             FileCount = fileCount;
         }
+        //override for serialize
+        public override string ToString()
+        {
+            string lineString = "";
+            lineString += Hash.ToString("N") + ";" + UserCount + ";" + FileCount;
+            return lineString;
+        }
     }
 }

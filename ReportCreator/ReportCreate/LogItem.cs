@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReportCreate
 {
-    class LogItem
+    struct LogItem
     {
         public string UserId { get; set; }
         public string FileName { get; set; }
@@ -14,13 +14,14 @@ namespace ReportCreate
         public Guid Hash { get; set; }
         public Int64 FileSize { get; set; }
 
-        public LogItem(string userId,string fileName,bool isVirus,Guid hash,Int64 fileSize)
+        //override for serialize
+        public override string ToString()
         {
-            UserId = userId;
-            FileName = fileName;
-            IsVirus = isVirus;
-            Hash = hash;
-            FileSize = fileSize;
+            string lineString ="";
+            lineString += UserId + ";" + FileName + ";";
+            lineString += IsVirus ? "1" : "0";
+            lineString += ";" + Hash.ToString("N") + ";" + FileSize;
+            return lineString;
         }
     }
 }

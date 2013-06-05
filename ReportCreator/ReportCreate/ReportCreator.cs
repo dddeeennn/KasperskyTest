@@ -11,16 +11,17 @@ namespace ReportCreate
 {
     class ReportCreator
     {
-        public string OpenPath { get; set; }
-        public string SavePath { get; set; }
+        public static string OpenPath { get; set; }
+        public static string SavePath { get; set; }
+        //list log files from open directory
         public List<LogFile> LogFiles { get; set; }
+        //dictionary for storage total report
         private Dictionary<Guid, TotalReportItem> TotalReport { get; set; }
         public string[] FilePaths { get; set; }
 
-        public ReportCreator(string openPath, string savePath)
+        public ReportCreator()
         {
-            OpenPath = openPath;
-            SavePath = savePath;
+            FilePaths = Directory.GetFiles(OpenPath);
             LogFiles = new List<LogFile>();
             TotalReport = new Dictionary<Guid, TotalReportItem>();
         }
@@ -35,9 +36,7 @@ namespace ReportCreate
                 LogFiles.Add(new LogFile(filePath));
             }
         }
-        /// <summary>
-        /// write in file scan report
-        /// </summary>
+        
         public void GetScanReport()
         {
             string pathString = SavePath + "\\ScanReport.csv";
@@ -46,57 +45,19 @@ namespace ReportCreate
                 FileStream fs = File.Create(pathString);
                 fs.Close();
             }
+            //get collection of logItems
             List<LogItem> listForSerilize = new List<LogItem>();
             foreach (LogFile item in LogFiles)
             {
                 listForSerilize.AddRange(item.LogItems);
             }
+            //write in file collection
             Serialize(listForSerilize, pathString);
         }
-
-        /// <summary>
-        /// generic method for serialize List
-        /// </summary>
-        /// <typeparam name="T">generic type</typeparam>
-        /// <param name="data">Data Array</param>
-        /// <param name="path">path to write</param>
-        private void Serialize<T>(List<T> data, string path)
-        {
-            using (StreamWriter streamWriter = new StreamWriter(path))
-            {
-                foreach (T item in data)
-                {
-                    string line = "";
-                    //get property of item use reflection 
-                    Type type = typeof(T);
-                    PropertyInfo[] propInfo = type.GetProperties();
-                    //for each property value write line in file
-                    for (int i = 0; i < propInfo.Length; i++)
-                    {
-                        //change bool value to "1" or "0"
-                        if (propInfo[i].PropertyType == typeof(bool))
-                        {
-                            line += (bool)propInfo[i].GetValue(item) ? 1 : 0;
-                        }
-                        else if (propInfo[i].PropertyType == typeof(Guid))
-                        {
-                            //write Guid in special format
-                            Guid tmpGuid = (Guid)propInfo[i].GetValue(item);
-                            line += tmpGuid.ToString("N");
-                        }
-                        else
-                        {
-                            line += propInfo[i].GetValue(item);
-                        }
-                        if (i != propInfo.Length - 1) line += ";";
-                    }
-                    streamWriter.WriteLine(line);
-                }
-            }
-        }
-
+       
         public void GetTotalReport()
         {
+            //for each files merge total reports
             foreach (LogFile logFile in LogFiles)
             {
                 foreach (KeyValuePair<Guid, TotalReportItem> item in logFile.GetTotalReportFile())
@@ -113,10 +74,32 @@ namespace ReportCreate
                 }
             }
             string pathString = SavePath + "\\TotalReport.csv";
+            //get list for serialize
             List<TotalReportItem> list = new List<TotalReportItem>();
             list = TotalReport.Values.ToList();
+            //sort descending
             list.Sort((x,y)=>x.UserCount<y.UserCount?1:x.UserCount==y.UserCount?0:-1);
+            //write in file
             Serialize(list,pathString);
         }
+
+        /// <summary>
+        /// generic method for serialize List
+        /// </summary>
+        /// <typeparam name="T">generic type must override ToString</typeparam>
+        /// <param name="data">Data Array</param>
+        /// <param name="path">path to write</param>
+        private void Serialize<T>(List<T> data, string path)
+        {
+            if (File.Exists(path)) File.Delete(path);
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+                foreach (T item in data)
+                {
+                    streamWriter.WriteLine(item.ToString());
+                }
+            }
+        }
+        
     }
 }
